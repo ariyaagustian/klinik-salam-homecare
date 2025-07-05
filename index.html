@@ -4,36 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klinik Pratama Salam Homecare</title>
-    <!-- Favicon dengan logo klinik -->
+    <!-- Favicon with clinic logo -->
     <link rel="icon" href="public/images/salam-homecare-logo.png" type="image/png">
-    <!-- Memuat Tailwind CSS CDN -->
+    <!-- Load Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Memuat ikon Lucide React -->
+    <!-- Load Lucide React icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Konfigurasi Tailwind CSS untuk warna kustom -->
+    <!-- Tailwind CSS configuration for custom colors -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#f5519d', // Warna primer Anda
-                        secondary: '#49c7c7', // Warna sekunder Anda
+                        primary: '#f5519d', // Your primary color
+                        secondary: '#49c7c7', // Your secondary color
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'], // Menggunakan font Inter
+                        sans: ['Lato', 'sans-serif'], // All text will now use Lato
+                        display: ['Lato', 'sans-serif'], // Headings will also use Lato
                     }
                 }
             }
         }
     </script>
-    <!-- Gaya kustom untuk memastikan font Inter dimuat -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom styles to ensure Lato font is loaded -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Memastikan ikon Lucide diinisialisasi */
+        /* Ensure Lucide icons are initialized */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Lato', sans-serif; /* Default font for body */
         }
-        /* Gaya tambahan untuk efek hover pada tombol */
+        /* Additional styles for button hover effects */
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(245, 81, 157, 0.4);
@@ -42,7 +43,7 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(73, 199, 199, 0.4);
         }
-        /* Efek bayangan untuk kartu layanan */
+        /* Shadow effect for service cards */
         .service-card {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
@@ -50,7 +51,7 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        /* Gaya untuk gambar galeri */
+        /* Styles for gallery images */
         .gallery-img {
             transition: transform 0.3s ease-in-out;
         }
@@ -64,10 +65,10 @@
     <!-- Header / Navbar -->
     <header class="bg-white shadow-lg py-4 sticky top-0 z-50 rounded-b-xl">
         <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-            <!-- Logo Klinik dan Nama -->
+            <!-- Clinic Logo and Name -->
             <div class="flex items-center mb-4 md:mb-0">
                 <img src="public/images/salam-homecare-logo.png" alt="Klinik Pratama Salam Homecare Logo" class="h-12 md:h-16 w-auto mr-3">
-                <span class="text-2xl md:text-3xl font-extrabold text-primary hidden md:block">Klinik Salam Homecare</span>
+                <span class="text-2xl md:text-3xl font-extrabold text-primary hidden md:block font-display">Klinik Salam Homecare</span>
             </div>
             <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-lg font-medium">
                 <a href="#beranda" class="text-gray-700 hover:text-primary transition-colors duration-300">Beranda</a>
@@ -81,10 +82,10 @@
     </header>
 
     <main>
-        <!-- Bagian Beranda (Hero Section) -->
+        <!-- Home Section (Hero Section) -->
         <section id="beranda" class="relative bg-gradient-to-r from-primary to-pink-400 text-white py-24 md:py-32 text-center overflow-hidden rounded-b-3xl shadow-xl">
             <div class="container mx-auto px-4 relative z-10">
-                <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 animate-fade-in-down">
+                <h1 class="text-5xl md:text-6xl font-display font-bold leading-tight mb-6 animate-fade-in-down">
                     Pelayanan Kesehatan Terbaik <br class="hidden md:inline">Untuk Anda
                 </h1>
                 <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in-up">
@@ -94,19 +95,19 @@
                     Jadwalkan Kunjungan Sekarang
                 </a>
             </div>
-            <!-- Bentuk latar belakang dekoratif -->
+            <!-- Decorative background shapes -->
             <div class="absolute bottom-0 left-0 w-full h-24 bg-white opacity-20 transform skew-y-3 origin-bottom-left"></div>
             <div class="absolute top-0 right-0 w-full h-24 bg-white opacity-10 transform -skew-y-3 origin-top-right"></div>
         </section>
 
-        <!-- Bagian Tentang Kami -->
+        <!-- About Us Section -->
         <section id="tentang" class="py-20 md:py-28 bg-gray-50">
             <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <img src="https://placehold.co/600x400/f5519d/ffffff?text=Tim+Medis+Profesional" alt="Tim Medis Profesional" class="rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/f5519d/ffffff?text=Tim+Medis+Profesional" alt="Professional Medical Team" class="rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="md:w-1/2 text-center md:text-left">
-                    <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-6">
                         Tentang Klinik Pratama Salam Homecare
                     </h2>
                     <p class="text-lg text-gray-700 leading-relaxed mb-6">
@@ -119,14 +120,14 @@
             </div>
         </section>
 
-        <!-- Bagian Layanan -->
+        <!-- Services Section -->
         <section id="layanan" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-12">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-12">
                     Layanan Unggulan Kami
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Kartu Layanan 1 -->
+                    <!-- Service Card 1 -->
                     <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
                         <div class="bg-primary bg-opacity-10 p-4 rounded-full mb-6">
                             <i data-lucide="heart-pulse" class="w-12 h-12 text-primary"></i>
@@ -136,7 +137,7 @@
                             Penanganan luka akut dan kronis dengan teknik terbaru, memastikan penyembuhan optimal dan mengurangi risiko infeksi.
                         </p>
                     </div>
-                    <!-- Kartu Layanan 2 -->
+                    <!-- Service Card 2 -->
                     <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
                         <div class="bg-secondary bg-opacity-10 p-4 rounded-full mb-6">
                             <i data-lucide="dumbbell" class="w-12 h-12 text-secondary"></i>
@@ -146,7 +147,7 @@
                             Program rehabilitasi yang disesuaikan untuk pemulihan pasca-cedera, stroke, atau kondisi muskuloskeletal lainnya.
                         </p>
                     </div>
-                    <!-- Kartu Layanan 3 -->
+                    <!-- Service Card 3 -->
                     <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
                         <div class="bg-primary bg-opacity-10 p-4 rounded-full mb-6">
                             <i data-lucide="stethoscope" class="w-12 h-12 text-primary"></i>
@@ -156,7 +157,7 @@
                             Cek kesehatan menyeluruh, pengukuran tekanan darah, gula darah, dan konsultasi medis umum.
                         </p>
                     </div>
-                    <!-- Kartu Layanan 4 -->
+                    <!-- Service Card 4 -->
                     <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
                         <div class="bg-secondary bg-opacity-10 p-4 rounded-full mb-6">
                             <i data-lucide="syringe" class="w-12 h-12 text-secondary"></i>
@@ -166,7 +167,7 @@
                             Pemberian injeksi dan pemasangan infus yang aman dan steril oleh tenaga medis berpengalaman.
                         </p>
                     </div>
-                    <!-- Kartu Layanan 5 -->
+                    <!-- Service Card 5 -->
                     <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
                         <div class="bg-primary bg-opacity-10 p-4 rounded-full mb-6">
                             <i data-lucide="baby" class="w-12 h-12 text-primary"></i>
@@ -176,7 +177,7 @@
                             Dukungan dan perawatan khusus untuk ibu hamil, pasca melahirkan, serta perawatan bayi dan anak.
                         </p>
                     </div>
-                    <!-- Kartu Layanan 6 -->
+                    <!-- Service Card 6 -->
                     <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
                         <div class="bg-secondary bg-opacity-10 p-4 rounded-full mb-6">
                             <i data-lucide="pill" class="w-12 h-12 text-secondary"></i>
@@ -190,85 +191,85 @@
             </div>
         </section>
 
-        <!-- Bagian Dokter Kami -->
+        <!-- Our Doctors Section -->
         <section id="dokter" class="py-20 md:py-28 bg-gray-50">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-12">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-12">
                     Tim Dokter Kami
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Dokter 1 -->
+                    <!-- Doctor 1 -->
                     <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
                         <img src="https://placehold.co/150x150/49c7c7/ffffff?text=Dr.+Andi" alt="Dr. Andi Pratama" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                         <h3 class="text-2xl font-semibold text-gray-900 mb-1">Dr. Andi Pratama</h3>
                         <p class="text-primary font-medium mb-3">Dokter Umum</p>
                         <p class="text-gray-600 text-center">Berpengalaman dalam penanganan kasus umum dan konsultasi kesehatan keluarga.</p>
                     </div>
-                    <!-- Dokter 2 -->
+                    <!-- Doctor 2 -->
                     <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
                         <img src="https://placehold.co/150x150/f5519d/ffffff?text=Dr.+Budi" alt="Dr. Budi Santoso" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                         <h3 class="text-2xl font-semibold text-gray-900 mb-1">Dr. Budi Santoso</h3>
                         <p class="text-primary font-medium mb-3">Spesialis Anak</p>
                         <p class="text-gray-600 text-center">Fokus pada kesehatan dan tumbuh kembang anak dengan pendekatan ramah anak.</p>
                     </div>
-                    <!-- Dokter 3 -->
+                    <!-- Doctor 3 -->
                     <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
                         <img src="https://placehold.co/150x150/49c7c7/ffffff?text=Dr.+Citra" alt="Dr. Citra Dewi" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                         <h3 class="text-2xl font-semibold text-gray-900 mb-1">Dr. Citra Dewi</h3>
                         <p class="text-primary font-medium mb-3">Spesialis Kulit & Kelamin</p>
                         <p class="text-gray-600 text-center">Ahli dalam diagnosis dan pengobatan berbagai masalah kulit dan kelamin.</p>
                     </div>
-                    <!-- Tambahkan lebih banyak dokter sesuai kebutuhan -->
+                    <!-- Add more doctors as needed -->
                 </div>
             </div>
         </section>
 
-        <!-- Bagian Galeri Fasilitas -->
+        <!-- Facility Gallery Section -->
         <section id="galeri" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-12">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-12">
                     Galeri Fasilitas Klinik
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Gambar Fasilitas 1 -->
+                    <!-- Facility Image 1 -->
                     <div class="overflow-hidden rounded-2xl shadow-lg">
-                        <img src="https://placehold.co/600x400/f5519d/ffffff?text=Ruang+Tunggu" alt="Ruang Tunggu Klinik" class="w-full h-64 object-cover gallery-img">
+                        <img src="https://placehold.co/600x400/f5519d/ffffff?text=Ruang+Tunggu" alt="Clinic Waiting Room" class="w-full h-64 object-cover gallery-img">
                         <p class="p-4 text-lg font-semibold text-gray-800">Ruang Tunggu Nyaman</p>
                     </div>
-                    <!-- Gambar Fasilitas 2 -->
+                    <!-- Facility Image 2 -->
                     <div class="overflow-hidden rounded-2xl shadow-lg">
-                        <img src="https://placehold.co/600x400/49c7c7/ffffff?text=Ruang+Pemeriksaan" alt="Ruang Pemeriksaan Medis" class="w-full h-64 object-cover gallery-img">
+                        <img src="https://placehold.co/600x400/49c7c7/ffffff?text=Ruang+Pemeriksaan" alt="Medical Examination Room" class="w-full h-64 object-cover gallery-img">
                         <p class="p-4 text-lg font-semibold text-gray-800">Ruang Pemeriksaan Modern</p>
                     </div>
-                    <!-- Gambar Fasilitas 3 -->
+                    <!-- Facility Image 3 -->
                     <div class="overflow-hidden rounded-2xl shadow-lg">
-                        <img src="https://placehold.co/600x400/f5519d/ffffff?text=Area+Resepsionis" alt="Area Resepsionis" class="w-full h-64 object-cover gallery-img">
+                        <img src="https://placehold.co/600x400/f5519d/ffffff?text=Area+Resepsionis" alt="Reception Area" class="w-full h-64 object-cover gallery-img">
                         <p class="p-4 text-lg font-semibold text-gray-800">Area Resepsionis Ramah</p>
                     </div>
-                    <!-- Gambar Fasilitas 4 -->
+                    <!-- Facility Image 4 -->
                     <div class="overflow-hidden rounded-2xl shadow-lg">
-                        <img src="https://placehold.co/600x400/49c7c7/ffffff?text=Laboratorium" alt="Area Laboratorium" class="w-full h-64 object-cover gallery-img">
+                        <img src="https://placehold.co/600x400/49c7c7/ffffff?text=Laboratorium" alt="Laboratory Area" class="w-full h-64 object-cover gallery-img">
                         <p class="p-4 text-lg font-semibold text-gray-800">Fasilitas Laboratorium</p>
                     </div>
-                    <!-- Gambar Fasilitas 5 -->
+                    <!-- Facility Image 5 -->
                     <div class="overflow-hidden rounded-2xl shadow-lg">
-                        <img src="https://placehold.co/600x400/f5519d/ffffff?text=Farmasi" alt="Area Farmasi" class="w-full h-64 object-cover gallery-img">
+                        <img src="https://placehold.co/600x400/f5519d/ffffff?text=Farmasi" alt="Pharmacy Area" class="w-full h-64 object-cover gallery-img">
                         <p class="p-4 text-lg font-semibold text-gray-800">Area Farmasi Lengkap</p>
                     </div>
-                    <!-- Gambar Fasilitas 6 -->
+                    <!-- Facility Image 6 -->
                     <div class="overflow-hidden rounded-2xl shadow-lg">
-                        <img src="https://placehold.co/600x400/49c7c7/ffffff?text=Ruang+Tindakan" alt="Ruang Tindakan" class="w-full h-64 object-cover gallery-img">
+                        <img src="https://placehold.co/600x400/49c7c7/ffffff?text=Ruang+Tindakan" alt="Procedure Room" class="w-full h-64 object-cover gallery-img">
                         <p class="p-4 text-lg font-semibold text-gray-800">Ruang Tindakan Steril</p>
                     </div>
-                    <!-- Tambahkan lebih banyak gambar fasilitas sesuai kebutuhan -->
+                    <!-- Add more facility images as needed -->
                 </div>
             </div>
         </section>
 
-        <!-- Bagian Kontak -->
+        <!-- Contact Section -->
         <section id="kontak" class="py-20 md:py-28 bg-secondary text-white rounded-t-3xl shadow-xl">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-8">
                     Hubungi Kami Sekarang
                 </h2>
                 <p class="text-xl md:text-2xl mb-12 max-w-2xl mx-auto opacity-90">
@@ -323,9 +324,9 @@
         </div>
     </footer>
 
-    <!-- JavaScript untuk inisialisasi ikon Lucide dan smooth scrolling -->
+    <!-- JavaScript for Lucide icon initialization and smooth scrolling -->
     <script>
-        // Inisialisasi ikon Lucide
+        // Initialize Lucide icons
         lucide.createIcons();
     </script>
     <script src="main.js"></script>
