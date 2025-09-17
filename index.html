@@ -137,28 +137,42 @@
                 <!-- Gambar diganti jadi trigger video -->
                 <div class="md:w-1/2">
                     <!-- Gambar jadi trigger video -->
+                    <!-- Thumbnail trigger -->
                     <div
-                    class="js-lazy-yt relative rounded-2xl shadow-xl overflow-hidden cursor-pointer group aspect-video w-full"
-                    style="aspect-ratio:16/9"
-                    data-youtube-id="PWRJqzpca1Q"
-                    aria-label="Putar video YouTube"
-                    role="button"
-                    >
-                    <!-- Thumbnail -->
-                    <img 
-                        loading="lazy"
-                        src="public/images/doctors/dokter-dan-perawat-baru.webp"
-                        alt="Professional Medical Team"
-                        class="thumb absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <!-- Tombol Play -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/90 group-hover:bg-white shadow-lg transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-pink-500" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                        </span>
+                        class="yt-trigger relative w-full aspect-video rounded-2xl shadow-xl overflow-hidden cursor-pointer group"
+                        data-youtube-id="PWRJqzpca1Q"
+                        >
+                        <img 
+                            src="public/images/doctors/dokter-dan-perawat-baru.webp"
+                            alt="Professional Medical Team"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/90 group-hover:bg-white shadow-lg transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-pink-500" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            </span>
+                        </div>
                     </div>
+
+                    <!-- Modal overlay -->
+                    <div id="ytModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+                        <div class="relative w-full max-w-4xl aspect-video bg-black rounded-xl overflow-hidden">
+                            <button id="ytClose" class="absolute top-2 right-2 z-50 bg-white/80 hover:bg-white rounded-full p-2">
+                            ✕
+                            </button>
+                            <iframe
+                            id="ytFrame"
+                            class="w-full h-full"
+                            src=""
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
                 <div class="md:w-1/2 text-center md:text-left">
@@ -515,12 +529,17 @@
         window.addEventListener('DOMContentLoaded', applyResponsiveLimit);
     </script>
 
+
     <script>
         (function () {
-        const els = document.querySelectorAll('.js-lazy-yt');
-        if (!els.length) return;
+        const triggers = document.querySelectorAll('.yt-trigger');
+        const modal = document.getElementById('ytModal');
+        const iframe = document.getElementById('ytFrame');
+        const closeBtn = document.getElementById('ytClose');
 
-        const buildIframe = (id) => {
+        triggers.forEach(el => {
+            el.addEventListener('click', () => {
+            const id = el.dataset.youtubeId;
             const params = new URLSearchParams({
                 autoplay: '1',
                 rel: '0',              // Disable video lain (hanya dari channel sama)
@@ -531,30 +550,29 @@
                 loop: '1', 
                 playlist: id
             });
-            const iframe = document.createElement('iframe');
             iframe.src = `https://www.youtube.com/embed/${id}?${params.toString()}`;
-            iframe.title = 'YouTube video player';
-            iframe.allow =
-                'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-            iframe.allowFullscreen = true;
-            iframe.className = 'absolute inset-0 w-full h-full rounded-2xl';
-            return iframe;
-        };
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            });
+        });
 
-        els.forEach((el) => {
-            const id = el.dataset.youtubeId;
-            el.addEventListener(
-            'click',
-            () => {
-                const iframe = buildIframe(id);
-                // ganti isi tetapi BIARKAN wrapper (yang punya aspect-ratio) tetap ada
-                el.replaceChildren(iframe);
-            },
-            { once: true, passive: true }
-            );
+        closeBtn.addEventListener('click', () => {
+            iframe.src = ''; // stop video
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        // close jika klik di luar area video
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+            iframe.src = '';
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            }
         });
         })();
     </script>
+
 
 </body>
 </html>
