@@ -544,11 +544,12 @@
                 autoplay: '1',
                 rel: '0',              // Disable video lain (hanya dari channel sama)
                 modestbranding: '1',   // Hilangkan logo besar YouTube
-                controls: '0',         // Tetap ada kontrol play/pause
+                controls: '1',         // Tetap ada kontrol play/pause
                 showinfo: '0',         // Sembunyikan judul/playlist
                 playsinline: '1',      // Putar inline di iOS
                 loop: '1', 
-                playlist: id
+                playlist: id,
+                vq: 'hd720' 
             });
             iframe.src = `https://www.youtube.com/embed/${id}?${params.toString()}`;
             modal.classList.remove('hidden');
