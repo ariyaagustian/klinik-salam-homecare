@@ -134,8 +134,32 @@
         <!-- About Us Section -->
         <section id="tentang" class="py-20 md:py-28 bg-gray-50">
             <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+                <!-- Gambar diganti jadi trigger video -->
                 <div class="md:w-1/2">
-                    <img loading="lazy"  src="public/images/doctors/dokter-dan-perawat-baru.webp" alt="Professional Medical Team" class="rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <!-- Gambar jadi trigger video -->
+                    <div
+                    class="js-lazy-yt relative rounded-2xl shadow-xl overflow-hidden cursor-pointer group aspect-video w-full"
+                    style="aspect-ratio:16/9"
+                    data-youtube-id="PWRJqzpca1Q"
+                    aria-label="Putar video YouTube"
+                    role="button"
+                    >
+                    <!-- Thumbnail -->
+                    <img 
+                        loading="lazy"
+                        src="public/images/doctors/dokter-dan-perawat-baru.webp"
+                        alt="Professional Medical Team"
+                        class="thumb absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <!-- Tombol Play -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/90 group-hover:bg-white shadow-lg transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-pink-500" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        </span>
+                    </div>
+                    </div>
                 </div>
                 <div class="md:w-1/2 text-center md:text-left">
                     <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-6">
@@ -489,6 +513,47 @@
 
         window.addEventListener('resize', applyResponsiveLimit);
         window.addEventListener('DOMContentLoaded', applyResponsiveLimit);
+    </script>
+
+    <script>
+        (function () {
+        const els = document.querySelectorAll('.js-lazy-yt');
+        if (!els.length) return;
+
+        const buildIframe = (id) => {
+            const params = new URLSearchParams({
+                autoplay: '1',
+                rel: '0',              // Disable video lain (hanya dari channel sama)
+                modestbranding: '1',   // Hilangkan logo besar YouTube
+                controls: '0',         // Tetap ada kontrol play/pause
+                showinfo: '0',         // Sembunyikan judul/playlist
+                playsinline: '1',      // Putar inline di iOS
+                loop: '1', 
+                playlist: id
+            });
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${id}?${params.toString()}`;
+            iframe.title = 'YouTube video player';
+            iframe.allow =
+                'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            iframe.allowFullscreen = true;
+            iframe.className = 'absolute inset-0 w-full h-full rounded-2xl';
+            return iframe;
+        };
+
+        els.forEach((el) => {
+            const id = el.dataset.youtubeId;
+            el.addEventListener(
+            'click',
+            () => {
+                const iframe = buildIframe(id);
+                // ganti isi tetapi BIARKAN wrapper (yang punya aspect-ratio) tetap ada
+                el.replaceChildren(iframe);
+            },
+            { once: true, passive: true }
+            );
+        });
+        })();
     </script>
 
 </body>
