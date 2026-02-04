@@ -97,6 +97,71 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 })();
 
+// Modal untuk galeri
+(function () {
+    const items = document.querySelectorAll('.gallery-item');
+    const modal = document.getElementById('galleryModal');
+    const modalImg = document.getElementById('galleryModalImg');
+    const modalCaption = document.getElementById('galleryModalCaption');
+    const closeBtn = document.getElementById('galleryModalClose');
+    let lastFocused = null;
+
+    if (!modal || !modalImg || !modalCaption || !closeBtn || items.length === 0) {
+        return;
+    }
+
+    const openModal = (item) => {
+        const img = item.querySelector('img');
+        const caption = item.querySelector('p');
+
+        if (img) {
+            modalImg.src = img.getAttribute('src') || '';
+            modalImg.alt = img.getAttribute('alt') || '';
+        }
+        modalCaption.textContent = caption ? caption.innerText.trim() : '';
+
+        lastFocused = document.activeElement;
+        document.body.classList.add('overflow-hidden');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        closeBtn.focus();
+    };
+
+    const closeModal = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+        modalImg.src = '';
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+            lastFocused.focus();
+        }
+    };
+
+    items.forEach((item) => {
+        item.addEventListener('click', () => openModal(item));
+        item.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openModal(item);
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (!modal.classList.contains('hidden') && event.key === 'Escape') {
+            closeModal();
+        }
+    });
+})();
+
 // Anda bisa menambahkan JavaScript lainnya di sini jika diperlukan,
 // seperti efek animasi saat scroll, validasi formulir (jika ada), dll.
 // Misalnya, untuk menambahkan kelas aktif ke navigasi saat bagian tertentu terlihat:
