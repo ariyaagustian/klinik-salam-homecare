@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://salam-klinik.com/sitemap.xml

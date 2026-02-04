@@ -81,6 +81,63 @@
       ]
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://salam-klinik.com/#organization",
+      "name": "Klinik Pratama Salam Klinik",
+      "url": "https://salam-klinik.com/",
+      "logo": "https://salam-klinik.com/public/images/salam-homecare-logo.png",
+      "telephone": "+62-813-1347-479",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jalan Curug Raya no 11, Ruko No.4-5, RT.1/RW.8, Pd. Klp., Kec. Duren Sawit",
+        "addressLocality": "Kota Jakarta Timur",
+        "addressRegion": "Daerah Khusus Ibukota Jakarta",
+        "postalCode": "13450",
+        "addressCountry": "ID"
+      },
+      "sameAs": [
+        "https://www.instagram.com/salamklinik/",
+        "https://maps.app.goo.gl/9bSmzeE8TVheviWD7"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://salam-klinik.com/#website",
+      "url": "https://salam-klinik.com/",
+      "name": "Klinik Pratama Salam Klinik",
+      "publisher": {
+        "@id": "https://salam-klinik.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://salam-klinik.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://salam-klinik.com/"
+        }
+      ]
+    }
+    </script>
     <!-- Load Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Lucide React icons -->
@@ -233,6 +290,11 @@
                     <p class="text-lg text-gray-700 leading-relaxed">
                         Fokus kami adalah pada kenyamanan pasien, keamanan, dan hasil terbaik. Kami percaya bahwa setiap individu berhak mendapatkan perhatian medis yang optimal.
                     </p>
+                    <div class="mt-6">
+                        <a href="tentang.html" class="inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition">
+                            Profil Lengkap Klinik
+                        </a>
+                    </div>
                 </div>
                 <!-- Gambar diganti jadi trigger video -->
                 <!-- <div class="md:w-1/2"> -->
@@ -427,6 +489,11 @@
                     </p>
                 </div>
                 </div>
+                <div class="mt-8">
+                    <a href="layanan.html" class="inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition">
+                        Lihat Detail Layanan
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -480,6 +547,11 @@
                         <p class="text-gray-600 text-center">Ahli dalam menganalisis jaringan tubuh untuk mendeteksi penyakit, termasuk diagnosis kanker dan gangguan sel.</p>
                     </div>
                     <!-- Add more doctors as needed -->
+                </div>
+                <div class="mt-8">
+                    <a href="dokter.html" class="inline-flex items-center justify-center bg-secondary text-white px-6 py-3 rounded-full font-semibold hover:bg-secondary/90 transition">
+                        Lihat Profil Dokter
+                    </a>
                 </div>
             </div>
         </section>
@@ -587,12 +659,17 @@
                 <p class="text-xl md:text-2xl mb-12 max-w-2xl mx-auto opacity-90">
                     Siap mendapatkan pelayanan kesehatan terbaik? Jangan ragu untuk menghubungi kami melalui saluran berikut:
                 </p>
+                <div class="mb-10">
+                    <a href="kontak.html" class="inline-flex items-center justify-center bg-white text-secondary px-6 py-3 rounded-full font-semibold hover:bg-white/90 transition">
+                        Detail Kontak & Lokasi
+                    </a>
+                </div>
                 <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12 mb-12">
                     <a href="tel:+628131347479" class="booking-telepon flex items-center text-white text-xl font-semibold hover:underline transition duration-300">
                         <i data-lucide="phone" class="w-8 h-8 mr-3"></i>
                         +628131347479
                     </a>
-                    <a href="https://wa.me/628131347479" target="_blank" rel="noopener noreferrer" class="booking-whatsapp flex items-center text-white text-xl font-semibold hover:underline transition duration-300">
+                    <a href="https://wa.me/628131347479?text=Halo%20Admin%20Salam%20Klinik,%20saya%20mendapatkan%20informasi%20dari%20website.%20Ingin%20konsultasi%2Fbooking%20layanan%20yang%20ada%20Salam%20Klinik.%20Terima%20Kasih" target="_blank" rel="noopener noreferrer" class="booking-whatsapp flex items-center text-white text-xl font-semibold hover:underline transition duration-300">
                         <i data-lucide="message-circle" class="w-8 h-8 mr-3"></i>
                         WhatsApp
                     </a>
@@ -618,6 +695,13 @@
             </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/628131347479?text=Halo%20Admin%20Salam%20Klinik,%20saya%20mendapatkan%20informasi%20dari%20website.%20Ingin%20konsultasi%2Fbooking%20layanan%20yang%20ada%20Salam%20Klinik.%20Terima%20Kasih" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp"
+        class="fixed bottom-6 right-6 z-50 flex items-center justify-center bg-green-500 text-white w-12 h-12 rounded-full shadow-lg hover:bg-green-600 transition">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+            <path d="M22 16.92v2a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.08 5.18 2 2 0 0 1 5.06 3h2a2 2 0 0 1 2 1.72c.12.81.3 1.6.54 2.35a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 5 5l1.73-1.06a2 2 0 0 1 2.11-.45c.75.24 1.54.42 2.35.54A2 2 0 0 1 22 16.92z"/>
+        </svg>
+    </a>
 
     <!-- JavaScript for Lucide icon initialization and smooth scrolling -->
     <script>
