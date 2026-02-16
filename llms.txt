@@ -20,9 +20,20 @@ Situs ini berisi profil klinik, layanan medis, tim dokter, lokasi, dan kontak re
 - Homecare
 - Khitan
 - Perawatan luka
-- Injeksi
+- Farmasi dan obat
 - Terapi uap
 - Pemasangan NGT dan kateter
+
+## Service Pages
+- Pemeriksaan Dokter Umum: https://salam-klinik.com/layanan/dokter-umum
+- Laboratorium: https://salam-klinik.com/layanan/laboratorium
+- Khitan: https://salam-klinik.com/layanan/khitan
+- Infus dan Injeksi Vitamin: https://salam-klinik.com/layanan/infus-dan-injeksi-vitamin
+- Farmasi dan obat: https://salam-klinik.com/layanan/farmasi-obat
+- Perawatan Luka: https://salam-klinik.com/layanan/perawatan-luka
+- Selang Makan dan Kencing: https://salam-klinik.com/layanan/selang-makan-dan-kencing
+- Terapi Uap: https://salam-klinik.com/layanan/terapi-uap
+- Homecare: https://salam-klinik.com/layanan/homecare
 
 ## Contact
 - Nama: Klinik Pratama Salam Klinik
