@@ -1,3 +1,46 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /admin
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+
 Sitemap: https://salam-klinik.com/sitemap.xml
