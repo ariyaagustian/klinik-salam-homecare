@@ -140,21 +140,28 @@
   </header>
 
   <main>
-    <section class="relative overflow-hidden bg-gradient-to-br from-ink via-secondary to-primary text-white py-16 md:py-24">
+    <section class="relative bg-white py-12 md:py-16 border-b border-slate-200">
       <div class="container mx-auto px-4">
-        <p class="text-sm mb-4"><a href="/layanan" class="underline">Layanan</a> / Homecare</p>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-          <div class="lg:col-span-2">
-            <h1 class="text-4xl md:text-5xl font-display font-black leading-tight mb-4">Homecare</h1>
-            <p class="text-lg md:text-xl opacity-95 max-w-3xl">Perawatan kesehatan langsung di rumah pasien untuk meningkatkan kenyamanan dan kontinuitas terapi.</p>
+        <p class="text-sm mb-4 text-slate-600"><a href="/layanan" class="text-primary underline underline-offset-2">Layanan</a> / Homecare</p>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          <div class="lg:col-span-8 h-full overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <div class="grid grid-cols-1 md:grid-cols-2 h-full md:items-center">
+              <div class="p-6 md:p-8 flex flex-col justify-center">
+            <h1 class="text-3xl md:text-4xl font-display font-black leading-tight text-ink mb-4">Homecare</h1>
+            <p class="text-lg md:text-xl text-slate-700 max-w-3xl">Perawatan kesehatan langsung di rumah pasien untuk meningkatkan kenyamanan dan kontinuitas terapi.</p>
             <div class="flex flex-wrap gap-3 mt-8">
-              <a href="https://wa.me/628131347479?text=Halo%20Admin%20Salam%20Klinik,%20saya%20ingin%20konsultasi%20layanan%20Homecare." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-white text-ink px-6 py-3 rounded-full font-bold hover:bg-slate-100 transition">Booking via WhatsApp</a>
-              <a href="/kontak" class="inline-flex items-center justify-center border border-white/70 px-6 py-3 rounded-full font-bold hover:bg-white/10 transition">Lihat Lokasi Klinik</a>
+              <a href="https://wa.me/628131347479?text=Halo%20Admin%20Salam%20Klinik,%20saya%20ingin%20konsultasi%20layanan%20Homecare." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-full font-bold hover:bg-primary/90 transition">Booking via WhatsApp</a>
+              <a href="/kontak" class="inline-flex items-center justify-center border border-slate-300 text-slate-700 px-6 py-3 rounded-full font-bold hover:bg-slate-50 transition">Lihat Lokasi Klinik</a>
             </div>
           </div>
-          <div class="bg-white/15 border border-white/30 rounded-2xl p-6 backdrop-blur-sm">
-            <h2 class="font-bold text-xl mb-3">Kenapa Pasien Memilih Layanan Ini?</h2>
-            <ul class="space-y-2 text-sm md:text-base">
+              <div class="h-full flex items-center justify-center p-4 md:p-6">
+                <img src="/public/images/services/homecare.webp" alt="Layanan homecare salam klinik" class="w-full h-auto max-h-[360px] object-contain" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-4 h-full bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col">
+            <h2 class="font-bold text-xl text-ink mb-3">Kenapa Pasien Memilih Layanan Ini?</h2>
+            <ul class="space-y-2 text-sm md:text-base text-slate-700">
               <li>Perawatan dilakukan di rumah untuk pasien dengan mobilitas terbatas.</li>
               <li>Tindakan homecare disesuaikan dengan kebutuhan klinis dan kondisi pasien.</li>
               <li>Keluarga mendapat arahan pendampingan harian agar perawatan lebih optimal.</li>
@@ -164,16 +171,6 @@
       </div>
     </section>
 
-    <section class="py-10 md:py-12 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="relative overflow-hidden rounded-2xl shadow-lg border border-slate-200">
-          <img src="/public/images/services/homecare.webp" alt="Layanan homecare salam klinik" class="w-full h-[240px] md:h-[380px] object-cover" loading="lazy">
-          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 md:p-6">
-            <p class="text-white text-sm md:text-base font-semibold">Layanan homecare menghadirkan perawatan medis lebih nyaman di rumah pasien.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="py-14 md:py-16 bg-white">
       <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -190,14 +187,14 @@
           </ul>
           <p class="text-slate-700 leading-relaxed">Dengan jadwal yang fleksibel, homecare membantu kesinambungan perawatan pasien secara lebih nyaman.</p>
         </div>
-        <aside class="bg-gradient-to-b from-primary to-pink-500 text-white rounded-2xl p-6 md:p-8">
+        <aside class="bg-gradient-to-b from-primary to-pink-500 text-white rounded-2xl p-6 md:p-8 flex flex-col h-full">
           <h2 class="text-xl font-bold mb-4">Informasi Cepat</h2>
-          <ul class="space-y-3 text-sm md:text-base">
+          <ul class="space-y-3 text-sm md:text-base flex-1">
             <li>Respon admin: setiap hari 09.00 - 21.00 WIB.</li>
             <li>Pasien walk-in tetap dapat dilayani sesuai antrean.</li>
             <li>Konsultasi awal membantu menentukan tindakan yang tepat.</li>
           </ul>
-          <a href="https://wa.me/628131347479?text=Halo%20Admin%20Salam%20Klinik,%20saya%20mau%20tanya%20detail%20Homecare." target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full items-center justify-center bg-white text-primary px-4 py-3 rounded-full font-bold hover:bg-slate-100 transition">Chat Admin</a>
+          <a href="https://wa.me/628131347479?text=Halo%20Admin%20Salam%20Klinik,%20saya%20mau%20tanya%20detail%20Homecare." target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center justify-center self-center min-w-[220px] bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-slate-100 transition">Chat Admin</a>
         </aside>
       </div>
     </section>
